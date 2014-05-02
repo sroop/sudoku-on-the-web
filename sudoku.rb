@@ -22,7 +22,7 @@ def contains_nine_zeros?(array)
 end
 
 def puzzle(sudoku, level=3)
-  kinda_empty_sudoku = sudoku.dup #both filled right now
+  kinda_empty_sudoku = sudoku.dup
   until contains_nine_zeros?(kinda_empty_sudoku) do
     kinda_empty_sudoku = sudoku.dup
     boxes = boxes(kinda_empty_sudoku).each{|box|
@@ -34,20 +34,6 @@ def puzzle(sudoku, level=3)
     kinda_empty_sudoku = cols.transpose.flatten
   end
   boxes(kinda_empty_sudoku).flatten
-end
-
-def placement_conditions(sudoku)
-  if !contains_zero?(rows(sudoku))
-    puts "no zero in rows"
-    return false
-  elsif !contains_zero?(columns(sudoku))
-    puts "no zero in columns"
-    return false
-  else !contains_zero?(boxes(sudoku))
-    puts "no zero in boxes"
-    return false
-  end
-  true
 end
 
 def box_order_to_row_order(sudoku)
@@ -67,12 +53,6 @@ def rows(sudoku)
   box_order_to_row_order(sudoku).each_slice(9).to_a
 end
 
-def contains_zero?(cell_containers)
-  containers_with_zero = cell_containers.select {|container| container.include?("0")}
-  return true if containers_with_zero.count == 9
-  false
-end
-
 def columns(sudoku)
   rows(sudoku).transpose
 end
@@ -81,33 +61,12 @@ def boxes(sudoku)
   sudoku.each_slice(9).to_a
 end
 
-def level_easy_boxes(sudoku)
-  enum = (0..8).to_a.shuffle.to_enum
-  order_by_box = boxes(sudoku)
-  order_by_box.each { |box| box[enum.next] = "0" }
-end
-
-def level_easy_rows(sudoku)
-  enum = (0..8).to_a.shuffle.to_enum
-  order_by_rows = rows(sudoku)
-  order_by_rows.each { |row| row[enum.next] = "0" }
-end
-
-def level_easy_cols(sudoku)
-  enum = (0..8).to_a.shuffle.to_enum
-  order_by_cols = cols(sudoku)
-  order_by_cols.each { |cols| cols[enum.next] = "0" }
-end
-
-
-
 get '/' do # default route for our website
   prepare_to_check_solution
   generate_new_puzzle_if_necessary
   set_session_variables
   erb :index
 end
-
 
 def level_generator(level)
   session.clear()
@@ -129,6 +88,12 @@ end
 
 post '/hard' do
   level_generator(100)
+end
+
+post '/restart' do
+  session[:current_solution] = session[:puzzle]
+  set_session_variables
+  erb :index
 end
 
 def set_session_variables
