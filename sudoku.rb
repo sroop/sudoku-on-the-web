@@ -31,9 +31,9 @@ def puzzle(sudoku, level=3)
         row[rand(9)]="0" if !row.include?("0")}
     cols = columns(rows.flatten).each {|col|
         col[rand(9)]="0" if !col.include?("0")}
-    kinda_empty_sudoku = cols.flatten
+    kinda_empty_sudoku = cols.transpose.flatten
   end
-  kinda_empty_sudoku
+  boxes(kinda_empty_sudoku).flatten
 end
 
 def placement_conditions(sudoku)
@@ -77,6 +77,10 @@ def columns(sudoku)
   rows(sudoku).transpose
 end
 
+def boxes(sudoku)
+  sudoku.each_slice(9).to_a
+end
+
 def level_easy_boxes(sudoku)
   enum = (0..8).to_a.shuffle.to_enum
   order_by_box = boxes(sudoku)
@@ -95,9 +99,7 @@ def level_easy_cols(sudoku)
   order_by_cols.each { |cols| cols[enum.next] = "0" }
 end
 
-def boxes(sudoku)
-  sudoku.each_slice(9).to_a
-end
+
 
 get '/' do # default route for our website
   prepare_to_check_solution
@@ -128,7 +130,6 @@ end
 post '/hard' do
   level_generator(100)
 end
-
 
 def set_session_variables
   @current_solution = session[:current_solution] || session[:puzzle]
