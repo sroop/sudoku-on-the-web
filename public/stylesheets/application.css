@@ -9,6 +9,7 @@ div.box, div.cell {
 
 #sudoku {
 	font-size: 0;
+	margin-top: 20px;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
 }
 
 .incorrect {
-	background-color: #FF99CC;
+	background-color: #000000;
 }
 
 .value-provided {

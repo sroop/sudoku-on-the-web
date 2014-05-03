@@ -6,9 +6,6 @@
 </head>
 <body>
 <h1>Life's too short for playing sudoku</h1>
-  <div id="flash">
-    <%= flash[:notice] %>
-  </div>
 <div id="sudoku">
   <form action="/" method="post">
   <!-- one div for each row -->
@@ -43,6 +40,9 @@
   </form><form action ="/hard" method="post">
     <button>hard</button>
   </form>
+  </div>
+    <div id="flash">
+    <%= flash[:notice] %>
   </div>
 </body>
 </html>

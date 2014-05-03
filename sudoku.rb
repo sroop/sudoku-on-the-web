@@ -153,6 +153,10 @@ helpers do
     value.to_i == 0 ? '' : value
   end
 
+  def read_only?(cell)
+    cell.to_i == 0 ? cell : 'readonly'
+  end
+  
 end
 
 

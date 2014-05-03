@@ -5,5 +5,5 @@
                         @puzzle[cell_index], 
                         @current_solution[cell_index], 
                         @solution[cell_index]) %>
-          <input class="<%= colour_class %>"  name="cell[]" type="text" maxlength="1" autocomplete="off" value="<%= cell_value %>">          
+          <input class="<%= colour_class %>"  name="cell[]" type="text" maxlength="1" autocomplete="off" value="<%= cell_value %>" <%= read_only?(@current_solution[cell_index]) %> >       
  </div>
