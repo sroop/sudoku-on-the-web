@@ -8,9 +8,42 @@ div.box, div.cell {
 	text-align: center;
 }
 
+#container {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#game-container {
+	width: 400px;
+	display: inline-block;
+	float: left;
+	position: relative;
+	margin-top: -30px;
+}
+
+#button-container {
+	display: inline-block;
+	position: absolute;
+	float: right;
+	margin-top: 190px
+}
+
+#session-button-container {
+	clear: both;
+	position: absolute;
+	margin-top: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 #sudoku {
 	font-size: 0;
 	margin-top: -25px;
+}
+
+.session-button {
+	display: inline-block;
 }
 
 body {
@@ -75,7 +108,7 @@ h1 {
 	height: 80px;
 	border-radius: 100%;
 	background-color: white;
-	margin: 10px 10px 10px 10px;
+	margin: 10px 10px 10px 20px;
 	border: none;
 }
 
@@ -92,23 +125,5 @@ h1 {
 
 .button-form {
 	display:block;
-}
-
-.button-form:first-child {
-	position: fixed;
-	top: 20%;
-	left:70%;
-}
-
-.button-form:nth-child(2) {
-	position: fixed;
-	top: 35%;
-	left:70%;
-}
-
-.button-form:nth-child(3) {
-	position: fixed;
-	top: 50%;
-	left:70%;
 }
 

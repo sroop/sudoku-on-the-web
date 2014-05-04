@@ -118,6 +118,10 @@ def prepare_to_check_solution
   session[:check_solution] = nil
 end
 
+post '/solution' do
+  redirect to("/solution")
+end
+
 get '/solution' do
   @current_solution = session[:solution]
   @solution = @current_solution
@@ -156,7 +160,7 @@ helpers do
   def read_only?(cell)
     cell.to_i == 0 ? cell : 'readonly'
   end
-  
+
 end
 
 
