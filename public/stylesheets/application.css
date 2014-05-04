@@ -3,19 +3,19 @@ div.box, div.cell {
 }
 
 .cell input {
-	width: 30px;
-	height: 30px;
+	width: 40px;
+	height: 40px;
 }
 
 #sudoku {
 	font-size: 0;
-	margin-top: 20px;
+	margin-top: -25px;
 }
 
 body {
 	text-align: center;
 	font-family: Arial;
-	background-color: #FF99CC;
+	background-color: #e6e6e6;
 }
 
 .incorrect {
@@ -23,7 +23,7 @@ body {
 }
 
 .value-provided {
-	background-color: #DDD;
+	background-color: white;
 }
 
 #flash {
@@ -31,5 +31,15 @@ body {
 }
 
 .box { 
-	border: 2px solid black;
+	border: 3px solid white;
+	background-color: white;
+	box-shadow: 8px 8px 0 #ffd217, 15px 15px 0 #5ac7ff, 23px 23px 0 #ffd217, 30px 30px 0 #5ac7ff;
+}
+
+h1 {
+	text-align: center;
+	font-size: 70pt;
+	font-family: 'Iceland';
+	text-shadow: 8px 8px 0 #ffd217, 15px 15px 0 #5ac7ff, 23px 23px 0 #ffd217, 30px 30px 0 #5ac7ff;
+	color: white;
 }
