@@ -17,7 +17,7 @@
     <div id="game-container">
 
     <h1>SUDOKU</h1>
-    <form class="session-button" action="/" method="post">
+    <form class="session-form" action="/" method="post">
       <!-- one div for each row -->
       <% 3.times do |row| %>
         <div class="row">
@@ -45,18 +45,17 @@
     </div>
 
     <div id="session-button-container">
-      <button>Check solution</button> </form>
-      <form class="session-button" action ="/restart" method="post"> <button>restart</button> </form>
-      <form class="session-button" action ="/solution" method="post"> <button>give up</button> </form>
+      <button class="session-button">check answers</button> </form>
+      <form class="session-form" action ="/restart" method="post"> <button class="session-button">restart game</button> </form>
+      <form class="session-form" action ="/solution" method="post"> <button class="session-button">give up</button> </form>
     </div>
+    <div id="flash"> <%= flash[:notice] %> </div>
 
   </div>
     <!-- all boxes, rows and cells -->
     
  
 </div>
-    <div id="flash">
-      <%= flash[:notice] %>
-    </div>
+
 </body>
 </html>
