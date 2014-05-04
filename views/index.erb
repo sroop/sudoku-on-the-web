@@ -34,14 +34,11 @@
     </form><form action ="/restart" method="post">
     <button>restart</button>
   </form>
-  <form action ="/easy" method="post">
-    <button>easy</button>
-  </form>
-  <form action ="/medium" method="post">
-    <button>medium</button>
-  </form><form action ="/hard" method="post">
-    <button>hard</button>
-  </form>
+
+    <form class="button-form" action ="/easy" method="post"> <button class="level">easy</button> </form>
+    <form class="button-form" action ="/medium" method="post"> <button class="level">medium</button> </form>
+    <form class="button-form" action ="/hard" method="post"> <button class="level">hard</button> </form>
+
   </div>
     <div id="flash">
     <%= flash[:notice] %>
