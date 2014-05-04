@@ -7,6 +7,7 @@
 </head>
 <body>
 <h1>SUDOKU</h1>
+
 <div id="sudoku">
 
   <form action="/" method="post">
@@ -26,6 +27,7 @@
             <% end %>
           </div>
         <% end %>
+
       </div>
     <% end %>
     <!-- all boxes, rows and cells -->
@@ -34,10 +36,14 @@
     </form><form action ="/restart" method="post">
     <button>restart</button>
   </form>
+ 
 
+  <div class="button-container">
     <form class="button-form" action ="/easy" method="post"> <button class="level">easy</button> </form>
     <form class="button-form" action ="/medium" method="post"> <button class="level">medium</button> </form>
     <form class="button-form" action ="/hard" method="post"> <button class="level">hard</button> </form>
+  </div>
+
 
   </div>
     <div id="flash">

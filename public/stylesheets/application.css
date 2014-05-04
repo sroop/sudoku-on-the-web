@@ -75,8 +75,7 @@ h1 {
 	height: 80px;
 	border-radius: 100%;
 	background-color: white;
-	margin-left: 10px;
-	margin-right: 10px;
+	margin: 10px 10px 10px 10px;
 	border: none;
 }
 
@@ -92,5 +91,24 @@ h1 {
 }
 
 .button-form {
-	display:inline-block;
+	display:block;
 }
+
+.button-form:first-child {
+	position: fixed;
+	top: 20%;
+	left:70%;
+}
+
+.button-form:nth-child(2) {
+	position: fixed;
+	top: 35%;
+	left:70%;
+}
+
+.button-form:nth-child(3) {
+	position: fixed;
+	top: 50%;
+	left:70%;
+}
+
