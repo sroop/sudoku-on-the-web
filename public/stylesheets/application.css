@@ -52,6 +52,8 @@ div.box, div.cell {
 	background-color: white;
 	border: none;
 	margin: 30px 10px 10px 10px;
+	box-shadow: 5px 5px 0 #ffd217, 10px 10px 0 #5ac7ff;
+	outline: 0;
 }
 
 body {
@@ -89,6 +91,8 @@ h1 {
 	margin-bottom: 30px;
 }
 
+/*PUSH ANIMATION FOR LEVEL BUTTONS - BEGIN*/
+
 @-webkit-keyframes level {
   50% {
     -webkit-transform: scale(0.8);
@@ -113,15 +117,6 @@ h1 {
   }
 }
 
-.level {
-	width: 80px;
-	height: 80px;
-	border-radius: 100%;
-	background-color: white;
-	margin: 10px 10px 10px 20px;
-	border: none;
-}
-
 .level:hover, .level:focus, .level:active {
   -webkit-animation-name: level;
   animation-name: level;
@@ -133,13 +128,28 @@ h1 {
   animation-iteration-count: 1;
 }
 
+/*PUSH ANIMATION FOR LEVEL BUTTONS - END*/
+
+.level {
+	width: 80px;
+	height: 80px;
+	border-radius: 100%;
+	background-color: white;
+	margin: 10px 10px 10px 20px;
+	border: none;
+	box-shadow: 5px 5px 0 #ffd217, 10px 10px 0 #5ac7ff;
+	outline: 0;
+}
+
 .button-form {
 	display:block;
 }
 
+/*CONTENT ANIMATION FOR CHECK SOLUTION BUTTON - BEGIN*/
+
 .session-button span::before{
 	position:absolute;
-	bottom:-20px;
+	bottom:-30px;
 	left:0;
 	width:100%;
 	content:attr(data-title);
@@ -155,6 +165,47 @@ h1 {
 .session-button span:hover::before{
 	opacity:1;
 }
+
+/*CONTENT ANIMATION FOR CHECK SOLUTION BUTTON - END*/
+
+/*PUSH ANIMATION FOR SESSION BUTTONS - BEGIN*/
+
+@-webkit-keyframes session-button {
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes session-button {
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.session-button:hover, .session-button:focus, .session-button:active {
+  -webkit-animation-name: level;
+  animation-name: level;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+/*PUSH ANIMATION FOR SESSION BUTTONS - END*/
 
 
 
