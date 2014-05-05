@@ -69,9 +69,10 @@ body {
 	text-align: center;
 }
 
-#flash {
+/*#flash {
+	position: absolute;
   	margin: 20px;
-}
+}*/
 
 .box { 
 	border: 3px solid white;
@@ -135,4 +136,25 @@ h1 {
 .button-form {
 	display:block;
 }
+
+.session-button span::before{
+	position:absolute;
+	bottom:-20px;
+	left:0;
+	width:100%;
+	content:attr(data-title);
+	color:#000;
+
+	opacity:0;
+
+	/* Animate the transitions */
+	-webkit-transition:opacity 0.4s;
+	transition:opacity 0.4s;
+}
+
+.session-button span:hover::before{
+	opacity:1;
+}
+
+
 

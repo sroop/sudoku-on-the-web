@@ -37,19 +37,21 @@
         </div>
       <% end %>
     </div>
+    <div id="session-button-container">
+      <button class="session-button"><span data-title="Incorrect values are highlighted in yellow">check answers</span></button> </form>
+      <form class="session-form" action ="/restart" method="post"> <button class="session-button">restart game</button> </form>
+      <form class="session-form" action ="/solution" method="post"> <button class="session-button">give up</button> </form>
+    </div>
+ 
 
     <div id="button-container">
       <form class="button-form" action ="/easy" method="post"> <button class="level">easy</button> </form>
       <form class="button-form" action ="/medium" method="post"> <button class="level">medium</button> </form>
       <form class="button-form" action ="/hard" method="post"> <button class="level">hard</button> </form>
     </div>
-
-    <div id="session-button-container">
-      <button class="session-button">check answers</button> </form>
-      <form class="session-form" action ="/restart" method="post"> <button class="session-button">restart game</button> </form>
-      <form class="session-form" action ="/solution" method="post"> <button class="session-button">give up</button> </form>
-    </div>
-    <div id="flash"> <%= flash[:notice] %> </div>
+   
+   <!-- <div id="flash"> <%= flash[:notice] %> </div> -->
+    
 
   </div>
     <!-- all boxes, rows and cells -->
