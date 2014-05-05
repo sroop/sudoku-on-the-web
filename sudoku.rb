@@ -4,6 +4,10 @@ require_relative './lib/cell'
 require 'sinatra/partial' 
 require 'rack-flash'
 
+configure :production do
+  require 'newrelic_rpm'
+end
+
 enable :sessions
 set :session_secret, '*&(^B234'
 set :partial_template_engine, :erb
